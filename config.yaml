@@ -1,13 +1,4 @@
-# Experiment descriptions and UI configuration.
-# This file is served at runtime by the dashboard backend — no rebuild needed.
-#
-# Branch mapping:
-#   main          → internal-dev, internal dashboard
-#   desp_staging  → DESP staging dashboard
-#   desp          → DESP production dashboard
-#
-# To edit: open a PR against the appropriate branch on GitHub.
-
+# This file contains human readable experiment descriptions for ClimateDT simulations.
 experiment_description:
   climatedt-e25.1:
     IFS-FESOM:

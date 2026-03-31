@@ -1,12 +1,10 @@
 # ClimateDT Experiment Descriptions
 
-Runtime configuration for the ClimateDT Dashboard — experiment descriptions and UI overrides.
+Human readable descriptions for ClimateDT experiments. Used by the ClimateDT Evaluation Charts (dashboard) to display experiment descriptions.
 
-## How it works
+You only need to edit the `config.yaml` file in this repo to update descriptions in the dashboard. The branches in this repo are mapped to different dashboard environments as follows:
 
-The dashboard backend fetches `config.yaml` from this repo at runtime via GitHub's raw content API, with a 30-second TTL cache. **No dashboard rebuild is needed** when descriptions change.
-
-## Branch mapping
+### Branch mapping
 
 | Branch | Dashboard environment |
 |---|---|
@@ -14,20 +12,8 @@ The dashboard backend fetches `config.yaml` from this repo at runtime via GitHub
 | `desp_staging` | DESP staging |
 | `desp` | DESP production |
 
-## Editing
+## Workflow
 
-1. Switch to the correct branch for the target environment
-2. Edit `config.yaml` (directly on GitHub or via PR)
-3. Changes appear in the dashboard within ~30 seconds
+To add or update experiment descriptions, edit the `config.yaml` file on the **main** branch. When you push changes to the remote repository, you should see the changes reflected in the internal and development dashboard environments within ~30 seconds.
 
-## Format
-
-```yaml
-experiment_description:
-  <project>:
-    <model>:
-      <experiment>:
-        <ensemble>: "Description text here"
-```
-
-The hierarchy matches the path structure in the AQUA S3 buckets: `project/model/experiment/ensemble/`.
+Always make changes to the `main` branch. Then, when the changes are verified in the internal environment, you can merge `main` into the `desp_staging` branch, and then create a PR from `desp_staging` to `desp` to promote the changes to the DESP production environment.
