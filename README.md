@@ -8,7 +8,7 @@ You only need to edit the `config.yaml` file in this repo to update descriptions
 
 | Branch | Dashboard environment | URL |
 |---|---|---|
-| `main` | Internal (dev + production) | [Internal dashboard](https://climatedt-internal-dashboard.2.rahtiapp.fi/) [Dev dashboard](https://climatedt-internal-dashboard.2.rahtiapp.fi/) |
+| `main` | Internal (dev + production) | [Internal dashboard](https://climatedt-internal-dashboard.2.rahtiapp.fi/) / [Dev dashboard](https://climatedt-internal-dashboard.2.rahtiapp.fi/) |
 | `desp_staging` | DESP staging | [DESP staging dashboard](https://climatedt-desp-staging-dashboard.2.rahtiapp.fi/) |
 | `desp` | DESP production | [DESP production dashboard](https://climatedt-desp-dashboard.2.rahtiapp.fi/) |
 
