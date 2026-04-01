@@ -13,4 +13,4 @@ experiment_description:
   climatedt-gen2:
     ICON-5km:
       baseline-cont:
-        r1: "This is an updated description!"
+        r1: "This is an updated description which is now different!"
