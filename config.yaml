@@ -1,4 +1,12 @@
-# This file contains human readable experiment descriptions for ClimateDT simulations.
+# Experiment descriptions and UI configuration.
+# This file is served at runtime by the dashboard backend — no rebuild needed.
+#
+# Branch mapping:
+#   main          → internal-dev, internal dashboard
+#   desp_staging  → DESP staging dashboard
+#   desp          → DESP production dashboard
+#
+# To edit: open a PR against the appropriate branch on GitHub.
 
 experiment_description:
   climatedt-gen2:
