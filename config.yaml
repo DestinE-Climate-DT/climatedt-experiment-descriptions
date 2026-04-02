@@ -5,8 +5,6 @@
 #   main          → internal-dev, internal dashboard
 #   desp_staging  → DESP staging dashboard
 #   desp          → DESP production dashboard
-#
-# To edit: open a PR against the appropriate branch on GitHub.
 
 experiment_description:
   climatedt-gen2:
