@@ -10,7 +10,7 @@ hide:
         - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
         - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
         - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
-    - "Ocean 3D":
+    - "Ocean 2D":
         - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
         - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
         - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
