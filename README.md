@@ -9,27 +9,40 @@ Human-readable descriptions and environment-specific configuration for ClimateDT
 | `common.yaml` | Shared config for all environments (descriptions, labels, ordering, etc.) |
 | `dev.yaml` | Overrides for the **dev** internal dashboard |
 | `internal.yaml` | Overrides for the **internal** production dashboard |
-| `desp_staging.yaml` | Overrides for the **DESP staging** dashboard |
-| `desp.yaml` | Overrides for the **DESP production** dashboard |
+| `desp.yaml` | Overrides for both **DESP staging** and **DESP production** dashboards (production reads from `desp` branch) |
 
-All dashboards read from the **main** branch. The web server service fetches `common.yaml` + the environment-specific file (e.g. `desp.yaml`), deep-merges them (environment wins on conflicts), and serves the result.
+The web server fetches `common.yaml` + the environment-specific file, deep-merges them (environment wins on conflicts), and serves the result.
+
+Keys in an environment file override matching keys in `common.yaml` via deep merge. For example, a description in `desp.yaml` overrides the same experiment's description from `common.yaml` only on DESP (staging or production, depending on branch - see below), while other dashboards still see the `common.yaml` version.
 
 ### Environment mapping
 
-| Environment file | Dashboard | URL |
-|---|---|---|
-| `dev.yaml` | Internal dev | [Dev dashboard](https://dev-climatedt-internal-dashboard.2.rahtiapp.fi/) |
-| `internal.yaml` | Internal production | [Internal dashboard](https://climatedt-internal-dashboard.2.rahtiapp.fi/) |
-| `desp_staging.yaml` | DESP staging | [DESP staging dashboard](https://climatedt-desp-staging-dashboard.2.rahtiapp.fi/) |
-| `desp.yaml` | DESP production | [DESP production dashboard](https://climatedt-desp-dashboard.2.rahtiapp.fi/) |
+| Environment file | Branch read | Dashboard | URL |
+|---|---|---|---|
+| `dev.yaml` | `main` | Internal dev | [Dev dashboard](https://dev-climatedt-internal-dashboard.2.rahtiapp.fi/) |
+| `internal.yaml` | `main` | Internal production | [Internal dashboard](https://climatedt-internal-dashboard.2.rahtiapp.fi/) |
+| `desp.yaml` | `main` | DESP staging | [DESP staging dashboard](https://climatedt-desp-staging-dashboard.2.rahtiapp.fi/) |
+| `desp.yaml` | `desp` *(protected)* | DESP production | [DESP production dashboard](https://climatedt-desp-dashboard.2.rahtiapp.fi/) |
 
 ## Workflow
 
-1. **Descriptions** (shared across all environments): edit `common.yaml` on **main**.
-2. **Environment-specific overrides** (hiding, default toggles, description overrides for one env): edit the corresponding env file (e.g. `desp.yaml`).
-3. Push to **main**. Changes appear within ~30 seconds (web server cache TTL).
+### For shared descriptions (all environments)
 
-Keys in an environment file override matching keys in `common.yaml` via deep merge. For example, a description in `desp.yaml` overrides the same experiment's description from `common.yaml` on the DESP dashboard, while other dashboards still see the `common.yaml` version.
+1. Edit `common.yaml` on **main**.
+2. Push to **main**. Changes appear on all dashboards within ~30 seconds.
+
+### For environment-specific config (e.g. hiding, label overrides)
+
+1. Edit the relevant env file on **main** (e.g. `dev.yaml` for the dev dashboard).
+2. Push to **main**. Changes appear within ~30 seconds.
+
+### For DESP production config
+
+The `desp` branch is protected and maps to the DESP production dashboard. The DESP staging dashboard reads the same `desp.yaml` but from the `main` branch, use it to verify changes before promoting.
+
+1. Edit `desp.yaml` on **main**.
+2. Push to **main** and verify on the [DESP staging dashboard](https://climatedt-desp-staging-dashboard.2.rahtiapp.fi/).
+3. When satisfied, open a PR from `main` → `desp`. Once merged, the DESP production dashboard picks up the changes.
 
 ## Supported keys
 
