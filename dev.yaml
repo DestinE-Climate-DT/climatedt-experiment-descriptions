@@ -4,3 +4,19 @@
 #
 # See README.md for the full reference of supported keys.
 
+hide:
+  diagnostics:
+    - "Sea Ice":
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
+    - "Ocean 3D":
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
+    - "Ocean 3D":
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
+        
+  
