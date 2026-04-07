@@ -1,8 +1,7 @@
 # Shared configuration for all dashboard environments.
 # All dashboards read from the main branch of this repo.
 # Environment-specific overrides go in dev.yaml, internal.yaml, desp_staging.yaml, desp.yaml.
-# The signer deep-merges common.yaml + {env}.yaml at runtime (env wins on conflicts).
-# No dashboard rebuild needed — changes appear within ~30 seconds (signer cache TTL).
+# The web server deep-merges common.yaml + {env}.yaml at runtime (env wins on conflicts).
 
 experiment_description:
   climatedt-gen2:

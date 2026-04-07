@@ -1,5 +1,3 @@
 # Internal environment overrides.
 # Keys here are deep-merged on top of common.yaml by the signer service.
 # Use this to hide diagnostics, override descriptions, etc. for the internal dashboard.
-#
-# See DESCRIPTIONS_CONFIG.md in the dashboard repo for supported keys.
