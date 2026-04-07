@@ -51,7 +51,7 @@ All keys are optional. You can use any combination in `common.yaml` or an env fi
 
 - **`experiment_description`** — Text shown in the "Description" diagnostic tab for each experiment.
 - **`projects` / `models` / `experiments` / `ensembles` / `diagnostics` / `sub_diagnostics` / `info_keys`** — Rename labels, control sort order, or hide entries.
-- **`default_enabled`** — Set which diagnostics/sub-diagnostics are toggled on by default.
+- **`default_enabled`** — Set which diagnostics/sub-diagnostics are toggled on by default. When `default_enabled.diagnostics` is set, any diagnostic **not** listed defaults to OFF — except `Description`, `Info`, and `Status`, which keep their built-in defaults (ON) unless explicitly listed.
 - **`content_files`** — Override plot descriptions or info-box metadata for specific files.
 - **`hide`** — Centralized hide lists (global or experiment-scoped) for diagnostics and other entries.
 
@@ -153,7 +153,9 @@ info_keys:
     order: 2
 
 default_enabled:
-  # Diagnostics not listed here default to OFF
+  # Diagnostics not listed here default to OFF.
+  # Exception: Description, Info, and Status keep their built-in defaults (ON)
+  # unless explicitly listed here.
   diagnostics:
     - "Description"
     - "Info"
