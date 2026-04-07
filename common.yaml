@@ -1,0 +1,38 @@
+# Shared configuration for all dashboard environments.
+# All dashboards read from the main branch of this repo.
+# Environment-specific overrides go in dev.yaml, internal.yaml, desp_staging.yaml, desp.yaml.
+# The web server deep-merges common.yaml + {env}.yaml at runtime (env wins on conflicts).
+
+experiment_description:
+  climatedt-gen2:
+    IFS-FESOM-10km:
+      story-nudging-Tplus2K:
+        r1: "The Storyline Tplus2K description goes here"
+      story-nudging-cont:
+        r1: "The Storyline control description goes here"
+      story-nudging-hist:
+        r1: "The Storyline historical description goes here"
+    
+    ICON-5km:
+      baseline-cont:
+        r1: "The ICON control description goes here"
+      baseline-hist:
+        r1: "The ICON historical description goes here"
+      projections-ssp370:
+        r1: "The ICON SSP370 projection description goes here"
+    
+    IFS-FESOM-5km:
+      baseline-cont:
+        r1: "The IFS-FESOM control description goes here"
+      baseline-hist:
+        r1: "The IFS-FESOM historical description goes here"
+      projections-ssp370:
+        r1: "The IFS-FESOM SSP370 projection description goes here"
+    
+    IFS-NEMO-5km:
+      baseline-cont:
+        r1: "The IFS-NEMO control description goes here"
+      baseline-hist:
+        r1: "The IFS-NEMO historical description goes here"
+      projections-ssp370:
+        r1: "The IFS-NEMO SSP370 projection description goes here"
