@@ -67,10 +67,10 @@ ensembles:
 # Custom labels and ordering for diagnostic panels.
 diagnostics:
   Description:
-    order: 1
+    order: 50
   Info:
     label: "Experiment Info"
-    order: 2
+    order: 1
   Status:
     label: "Run Status"
     order: 3
@@ -128,7 +128,7 @@ default_enabled:
 # Override the description text for a specific plot file.
 content_files:
   "climatedt-gen2/ICON-5km/baseline-cont/r1/info_keys":
-    note: "Dev-only info override: this run uses the dev S3 bucket."
+    note: "Dev-only info override! The note field does not exist normally, but we're adding it here to show how new fields can be added."
 
 # --- hide ---
 hide:
