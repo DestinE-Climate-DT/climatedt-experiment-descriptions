@@ -31,8 +31,8 @@ experiment_description:
     
     IFS-NEMO-5km:
       baseline-cont:
-        r1: "The IFS-NEMO control description goes here"
+        r1: "A 10-year simulation from 1 January 1990 to 31 December 1999 with all external forcings (greenhouse gases, aerosols, solar irradiance, volcanoes, land use) fixed at 1990 levels. The atmosphere is configured on a TCO2559L137 grid (~5 km horizontal resolution), and the ocean on an eORCA12_Z75 grid (~7–9 km, 0.0833°). A two-year spin-up is applied to equilibrate the model before the simulation begins."
       baseline-hist:
-        r1: "The IFS-NEMO historical description goes here"
+        r1: "A 25-year simulation from 1 January 1990 to 31 December 2014 with all external forcings prescribed as time-varying following historical observations. The same atmospheric and ocean resolutions are used: TCO2559L137 (~5 km) and eORCA12_Z75 (~7–9 km, 0.0833°). A two-year spin-up is also applied to equilibrate the model prior to the simulation."
       projections-ssp370:
-        r1: "The IFS-NEMO SSP370 projection description goes here"
+        r1: "A 35-year simulation from 1 January 2015 to 31 December 2049 following the SSP3 7.0 scenario (Shared Socioeconomic Pathway 3 with high forcing). All external forcings (greenhouse gases, aerosols, solar irradiance, volcanoes, land use) evolve according to the SSP3 7.0 pathway. The model configuration remains unchanged: TCO2559L137 atmosphere (~5 km) and eORCA12_Z75 ocean (~7–9 km, 0.0833°). The simulation is initialized from the end state of the historical simulation."
