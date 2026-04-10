@@ -2,3 +2,26 @@
 # Keys here are deep-merged on top of common.yaml by the signer service.
 # Use this to hide diagnostics, override descriptions, etc. for the DESP production dashboard.
 
+hide:
+  diagnostics:
+    - "Sea Ice":
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
+    - "Ocean 2D":
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
+    - "Ocean 3D":
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
+        - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
+  sub_diagnostics:
+    "Climate metrics":
+      - "Performance indices":
+          - "climatedt-gen2/IFS-FESOM-10km/story-nudging-cont/r1"
+          - "climatedt-gen2/IFS-FESOM-10km/story-nudging-hist/r1"
+          - "climatedt-gen2/IFS-FESOM-10km/story-nudging-Tplus2K/r1"
+          - "climatedt-gen2/IFS-FESOM-5km/projections-ssp370/r1"
+          - "climatedt-gen2/IFS-NEMO-5km/projections-ssp370/r1"
+          - "climatedt-gen2/ICON-5km/projections-ssp370/r1"
